@@ -1,0 +1,26 @@
+body {
+    background-color: bisque;
+    /* background-image: url("static/path/to/alex-knight-2EJCSULRwC8-unsplash.jpg"); */
+    background-size: cover;
+}
+
+
+div {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 2em;
+    margin-bottom: -2.5em;
+}
+
+input {
+    text-align: center;
+}
+
+select {
+    text-align: center;
+}
