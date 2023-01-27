@@ -1,15 +1,15 @@
 from flask import Flask, flash, redirect, render_template, request, url_for, request
 
 
-app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # required for flash()
+application = Flask(__name__)
+application.secret_key = 'your_secret_key'  # required for flash()
 
-@app.route('/')
+@application.route('/')
 def calculator():
     return render_template('calculator.html')
 
 
-@app.route('/calculate', methods=['POST'])
+@application.route('/calculate', methods=['POST'])
 def calculate():
     num1 = request.form.get('num1')
     num2 = request.form.get('num2')
@@ -43,11 +43,11 @@ def calculate():
         return redirect(url_for('calculator'))
     return render_template('calculator.html', result=result)
 
-@app.route('/index')
+@application.route('/index')
 def index():
     return render_template('index.html')
 
-@app.route('/upload', methods=['GET', 'POST'])
+@application.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if request.method == 'POST':
         f = request.files['the_file']
@@ -55,4 +55,4 @@ def upload_file():
         return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    application.run(debug=True)
