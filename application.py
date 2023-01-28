@@ -47,12 +47,6 @@ def calculate():
 def index():
     return render_template('index.html')
 
-@application.route('/upload', methods=['GET', 'POST'])
-def upload_file():
-    if request.method == 'POST':
-        f = request.files['the_file']
-        f.save('/var/www/uploads/uploaded_file.txt')       
-        return render_template('index.html')
 
 if __name__ == '__main__':
     application.run(debug=True)
